@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2026 Rayleigh Gamma
+ * See LICENSE for licensing information.
+ */
+
 #ifndef RAYCLI_LEXER_TOKEN_H
 #define RAYCLI_LEXER_TOKEN_H
 

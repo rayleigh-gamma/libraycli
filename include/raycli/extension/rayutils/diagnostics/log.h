@@ -1,3 +1,10 @@
+/*
+ * Logging extension for librayutils.
+ *
+ * Copyright (C) 2026 Rayleigh Gamma
+ * See LICENSE for licensing information.
+ */
+
 #ifndef RAYCLI_EXTENSION_RAYUTILS_DIAGNOSTICS_LOG_H
 #define RAYCLI_EXTENSION_RAYUTILS_DIAGNOSTICS_LOG_H
 
