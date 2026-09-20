@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/cmake_install.cmake",
-		"/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/vendor/librayutils/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
