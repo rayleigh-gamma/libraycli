@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#define _CRT_SECURE_NO_WARNINGS 1
+#endif
+
 #include "raycli/extension/rayutils/diagnostics/log.h"
 #include "raycli/parser/cmdline/cmdline.h"
 
