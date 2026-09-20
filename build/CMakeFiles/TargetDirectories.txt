@@ -1,0 +1,6 @@
+/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/CMakeFiles/raycli.dir
+/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/vendor/librayutils/CMakeFiles/rayutils.dir
+/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/vendor/librayutils/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Rayleigh/Development/Repositories/libraycli/build/vendor/librayutils/CMakeFiles/rebuild_cache.dir
