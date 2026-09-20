@@ -11,7 +11,7 @@ endif()
 
 set(NAME "raycli")
 
-add_subdirectory("./vendor/librayutils/")
+add_subdirectory("./third_party/librayutils/")
 
 project(${NAME} VERSION 0.1.0 LANGUAGES C)
 
