@@ -12,10 +12,10 @@
 RAY_STACK_DECLARATION(RayCLIOptRule, RayCLIOptRule, raycli_optrule)
 
 typedef struct {
-	RayCLITokenStack *general_options;
-	RayCLIToken *command;
-	RayCLITokenStack *options;
-	RayCLITokenStack *arguments;
+	RayCLITokenStack general_options;
+	RayCLIToken command;
+	RayCLITokenStack options;
+	RayCLITokenStack arguments;
 } RayCLICmdline;
 
 void raycli_cmdline_destroy(RayCLICmdline *const cmdline);

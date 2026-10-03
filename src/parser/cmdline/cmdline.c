@@ -12,8 +12,8 @@ void
 raycli_cmdline_destroy(RayCLICmdline *const cmdline)
 {
 	assert(cmdline != NULL);
-	if (cmdline->options != NULL) raycli_token_stack_free(cmdline->options);
-	if (cmdline->arguments != NULL) raycli_token_stack_free(cmdline->arguments);
+	raycli_token_stack_free(&cmdline->options);
+	raycli_token_stack_free(&cmdline->arguments);
 }
 
 RayBool

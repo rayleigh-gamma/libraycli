@@ -18,18 +18,18 @@ RayBool raycli_parser_parse(RayCLIParser *const parser, RayCLICmdline *cmdline) 
 	assert(parser != NULL);
 
 	RayCLIToken *current_token = raycli_parser_get_current_token(parser);
-	RayCLITokenStack *general_options = NULL;
-	RayCLIToken *command = NULL;
-	RayCLITokenStack *options = NULL;
-	RayCLITokenStack *arguments = NULL;
+	RayCLITokenStack general_options;
+	RayCLIToken command;
+	RayCLITokenStack options;
+	RayCLITokenStack arguments;
 
 	while (current_token->kind != RAYCLI_TOKEN_KIND_END_OF_LINE && current_token->kind != RAYCLI_TOKEN_KIND_IDENTIFIER) {
-		if (general_options == NULL && !raycli_token_stack_init(general_options)) {
+		if (general_options.elements == NULL && !raycli_token_stack_init(&general_options)) {
 			return false;
 		}
 
-		if (!raycli_token_stack_push(general_options, *current_token)) {
-			raycli_token_stack_free(general_options);
+		if (!raycli_token_stack_push(&general_options, *current_token)) {
+			raycli_token_stack_free(&general_options);
 			return false;
 		}
 
@@ -40,30 +40,30 @@ RayBool raycli_parser_parse(RayCLIParser *const parser, RayCLICmdline *cmdline) 
 		goto end;
 	}
 
-	command = current_token;
+	*(RayCLIToken *) &command = *(RayCLIToken *) &current_token;
 	current_token = raycli_parser_advance_and_get_token(parser);
 
 	while (current_token->kind != RAYCLI_TOKEN_KIND_END_OF_LINE) {
 		switch (current_token->kind) {
 			case RAYCLI_TOKEN_KIND_IDENTIFIER: {
-				if (arguments == NULL && !raycli_token_stack_init(arguments)) {
+				if (arguments.elements == NULL && !raycli_token_stack_init(&arguments)) {
 					return false;
 				}
 
-				if (!raycli_token_stack_push(arguments, *current_token)) {
-					raycli_token_stack_free(arguments);
+				if (!raycli_token_stack_push(&arguments, *current_token)) {
+					raycli_token_stack_free(&arguments);
 					return false;
 				}
 			} break;
 
 			case RAYCLI_TOKEN_KIND_SHORT_OPTION:
 			case RAYCLI_TOKEN_KIND_LONG_OPTION: {
-				if (options == NULL && !raycli_token_stack_init(options)) {
+				if (options.elements == NULL && !raycli_token_stack_init(&options)) {
 					return false;
 				}
 
-				if (!raycli_token_stack_push(options, *current_token)) {
-					raycli_token_stack_free(options);
+				if (!raycli_token_stack_push(&options, *current_token)) {
+					raycli_token_stack_free(&options);
 					return false;
 				}
 			} break;
