@@ -21,6 +21,6 @@ typedef struct {
 } RayCLILexer;
 
 RayCLILexer raycli_lexer_make(const int argc, char **const argv);
-RayBool raycli_lexer_tokenize(RayCLILexer *const lexer, RayCLITokenStack **tokens);
+RayBool raycli_lexer_tokenize(RayCLILexer *const lexer, RayCLITokenStack *tokens);
 
 #endif /* RAYCLI_LEXER_LEXER_H */

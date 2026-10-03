@@ -37,10 +37,10 @@ RayCLILexer raycli_lexer_make(const int argc, char **const argv) {
 	};
 }
 
-RayBool raycli_lexer_tokenize(RayCLILexer *const lexer, RayCLITokenStack **tokens) {
+RayBool raycli_lexer_tokenize(RayCLILexer *const lexer, RayCLITokenStack *tokens) {
 	assert(lexer != NULL);
 
-	if (!raycli_token_stack_create(tokens)) {
+	if (!raycli_token_stack_init(tokens)) {
 		return false;
 	}
 
