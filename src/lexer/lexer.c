@@ -12,6 +12,7 @@
 #include "raycli/lexer/lexer.h"
 
 RAY_STACK_IMPLEMENTATION(RayCLIToken, RayCLIToken, raycli_token, NULL)
+RAY_STACK_FREE_IMPLEMENTATION(RayCLIToken, RayCLIToken, raycli_token)
 
 static RayBool raycli_lexer_tokenize_next(RayCLILexer *const lexer, RayCLIToken *const token);
 static RayBool raycli_lexer_tokenize_option(RayCLILexer *const lexer, RayCLIToken *const token);

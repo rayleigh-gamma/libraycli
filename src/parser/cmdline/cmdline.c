@@ -6,6 +6,7 @@
 #include "raycli/parser/cmdline/cmdline.h"
 
 RAY_STACK_IMPLEMENTATION(RayCLIOptRule, RayCLIOptRule, raycli_optrule, NULL)
+RAY_STACK_FREE_IMPLEMENTATION(RayCLIOptRule, RayCLIOptRule, raycli_optrule)
 
 void
 raycli_cmdline_destroy(RayCLICmdline *const cmdline)
